@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    .row
+        .card.shadow
+            img.card-img-top.col-6.offset-3(src=`${Post.imagen}`)
+            .card-body
+                h5.card-title #{Post.Titular}
+                h6 Categoria: #{categor.nombre}
+                p.card-text #{Post.texto}
+                
+
+            

@@ -1,0 +1,52 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Edita Post
+            form.margentop(
+                method="POST",
+                action="/posts/edit"
+            )
+
+                .form-group
+                    label(for="inputTitular") Titular
+                    input.form-control(
+                        type="text", 
+				        name="Titular", 
+				        value=`${Post.Titular}`
+                    )
+
+                .form-group
+                    label(for="inputimagen") Imagen
+                    input.form-control(
+                        type="text", 
+				        name="imagen", 
+				        value=`${Post.imagen}`
+                    )
+
+                .form-group
+                    label(for="inputtexto") Texto
+                    textarea.form-control(
+                        rows="8",
+				        name="texto"
+				    ) #{Post.texto}
+                
+                .form-group
+                    label(for="InputIds") Categoria
+                    select.form-control(
+                        name="categoria"
+                    ) 
+                        option(value=`${categorypost._id}`) #{categorypost.nombre}          
+                        each categoria in categor
+                            option(value=`${categoria._id}`) #{categoria.nombre}
+
+                input.form-control(
+			        type="hidden", 
+			        name="id", 
+			        value=`${Post._id}`
+		        )
+
+                button.btn.btn-primary.btn-block(type="submit") Modificar
+
+                    

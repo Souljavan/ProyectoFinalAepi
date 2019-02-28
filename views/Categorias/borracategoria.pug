@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Elimina Categoria #{category.nombre}
+            form.margentop(
+                method="POST",
+                action="/categorias/delete"
+            )
+
+                .form-group
+                    label(for="inputNombre") Nombre
+                    input.form-control(
+                        type="text", 
+				        name="nombre", 
+				        value=`${category.nombre}`
+                    )
+
+                .form-group
+                    label(for="inputdescripcion") Descripcion
+                    input.form-control(
+                        type="text", 
+				        name="descripcion", 
+				        value=`${category.descripcion}`
+                    )
+                
+                input.form-control(
+			        type="hidden", 
+			        name="id", 
+			        value=`${category._id}`
+		        )
+                
+                button.btn.btn-danger.eliminar(type="submit") Eliminar
+                a.btn.btn-primary(role="button", href="/Categorias") Cancelar

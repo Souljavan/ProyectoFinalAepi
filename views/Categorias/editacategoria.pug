@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Edita Categoria #{category.nombre}
+            form.margentop(
+                method="POST",
+                action="/categorias/edit"
+            )
+
+                .form-group
+                    label(for="inputNombre") Nombre
+                    input.form-control(
+                        type="text", 
+				        name="nombre", 
+				        value=`${category.nombre}`
+                    )
+
+                .form-group
+                    label(for="inputdescripcion") Descripcion
+                    input.form-control(
+                        type="text", 
+				        name="descripcion", 
+				        value=`${category.descripcion}`
+                    )
+                
+                input.form-control(
+			        type="hidden", 
+			        name="id", 
+			        value=`${category._id}`
+		        )
+                
+                button.btn.btn-primary.btn-block(type="submit") Enviar

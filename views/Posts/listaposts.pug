@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Listado de Posts
+    .row
+        a.btn.btn-success.margenbottom(role="button", href="/posts/new") Añadir Post
+    .row
+        each post in Post
+            .card.cardpost
+                .imagencard
+                    img.card-img-top(src=`${post.imagen}`)
+                .card-body
+                    h5.card-title #{post.Titular}
+                    p.card-text= post.texto.substring(0,200)
+                    a.btn.btn-primary(href='/posts/post/'+ post._id) Leer mas
+                    a.btn.btn-info.ml-1(href='/posts/edit/'+ post._id) Editar
+                    a.btn.btn-danger.ml-1(href='/posts/delete/'+ post._id) Eliminar
+
+            

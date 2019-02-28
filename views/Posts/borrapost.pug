@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Borra Post
+            form.margentop(
+                method="POST",
+                action="/posts/delete"
+            )
+
+                .form-group
+                    label(for="inputTitular") Titular
+                    input.form-control(
+                        type="text", 
+				        name="Titular", 
+				        placeholder=`${Post.Titular}`
+                    )
+
+                .form-group
+                    label(for="inputimagen") Imagen
+                    input.form-control(
+                        type="text", 
+				        name="imagen", 
+				        placeholder=`${Post.imagen}`
+                    )
+
+                .form-group
+                    label(for="inputtexto") Texto
+                    textarea.form-control(
+                        rows="5",
+				        name="texto", 
+				        placeholder=`${Post.texto}`
+                    )
+                
+                input.form-control(
+			        type="hidden", 
+			        name="id", 
+			        value=`${Post._id}`
+		        )
+                
+
+                button.btn.btn-danger.eliminar(type="submit") Eliminar
+                a.btn.btn-primary(role="button", href="/posts") Cancelar
+
+                    

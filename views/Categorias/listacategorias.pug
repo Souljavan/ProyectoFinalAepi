@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Listado de Categorias
+    .row.margentop        
+        .col
+            a.btn.btn-success.margenbottom(role="button", href="/Categorias/new") Añadir Categoria
+            table.table.table-striped.tablacategorias
+                thead
+                    tr
+                        th(scope="col") nombre
+                        th(scope="col") descripcion
+                        th(scope="col") Opciones
+                tbody
+                    each categoria in categori 
+                        tr
+                            td #{categoria.nombre}
+                            td #{categoria.descripcion}
+                            td 
+                                a(
+                                    href="/Categorias/edit/" + categoria._id
+                                )
+                                    img.lapiz(src="../images/pencil.png" alt="Editar Categoria")
+                                a(
+                                    href="/Categorias/delete/" + categoria._id
+                                )
+                                    img.cruzroja(src="../images/cruz-roja.png" alt="Editar Categoria")

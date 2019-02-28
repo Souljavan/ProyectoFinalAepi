@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Nuevo Post
+            form.margentop(
+                method="POST",
+                action="/posts/create"
+            )
+
+                .form-group
+                    label(for="inputTitular") Titular
+                    input.form-control(
+                        type="text", 
+				        name="Titular", 
+				        placeholder="Introduce el Titular del Post"
+                    )
+
+                .form-group
+                    label(for="inputimagen") Imagen
+                    input.form-control(
+                        type="text", 
+				        name="imagen", 
+				        placeholder="Introduce la imagen del post"
+                    )
+
+                .form-group
+                    label(for="inputtexto") Texto
+                    textarea.form-control(
+                        rows="5",
+				        name="texto", 
+				        placeholder="Introduce el texto del Post"
+                    )
+                
+                .form-group
+                    label(for="InputIds") Categoria
+                    select.form-control(
+                        name="categoria"
+                    )               
+                        each categoria in categori
+                            option(value=`${categoria._id}`) #{categoria.nombre}
+
+                button.btn.btn-primary.btn-block(type="submit") Crear Post
+
+                    

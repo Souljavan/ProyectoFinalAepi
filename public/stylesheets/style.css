@@ -1,0 +1,38 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.margentop{
+  margin-top:50px;
+}
+.margenbottom{
+  margin-bottom:5px;
+}
+.titulo1{
+  margin-bottom: 3px;
+}
+.lapiz{
+  width:50px;
+}
+.cruzroja{
+  margin-left:5px;
+  width:40px;
+}
+.eliminar{
+  width:250px;
+  margin-right: 10px;
+}
+.cardpost{
+  width: 18rem;
+  margin-left:5px;
+
+}
+.imagencard{
+  height:204px;
+  
+}
+

@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+    .row
+        .col
+            h1 Nueva Categoria
+            form.margentop(
+                method="POST",
+                action="/categorias/create"
+            )
+
+                .form-group
+                    label(for="inputNombre") Nombre
+                    input.form-control(
+                        type="text", 
+				        name="nombre", 
+				        placeholder="Introduce el Nombre de la Categoria"
+                    )
+
+                .form-group
+                    label(for="inputdescripcion") Descripcion
+                    input.form-control(
+                        type="text", 
+				        name="descripcion", 
+				        placeholder="Introduce la descripción de la categoria."
+                    )
+                
+                button.btn.btn-primary.btn-block(type="submit") Enviar

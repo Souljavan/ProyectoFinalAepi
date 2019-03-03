@@ -92,11 +92,11 @@ router.get('/api/:idCategoria', function (req, res) {
 /* Ruta crea categorias */
 
 router.post('/api/create', (req, res) => {
-    if ((req.body.nombre == "") || (req.body.descripcion == "") || (req.body.id == "")) {
-        res.json({error:"La peticion de los campos id,nombre, descripcion  no puede estar vacia"});
+    if ((req.body.nombre == "") || (req.body.descripcion == "")) {
+        res.json({error:"La peticion de los campos nombre, descripcion  no puede estar vacia"});
     }
-    else if ((req.body.nombre == null) || (req.body.descripcion == null) || (req.body.id == null)){
-        res.json({error:"La peticion debe llegar con los campos id,nombre, descripcion"});
+    else if ((req.body.nombre == null) || (req.body.descripcion == null)){
+        res.json({error:"La peticion debe llegar con los campos nombre, descripcion"});
     }
     else {
          categoriesmodel.create(req.body , (err, categoria)=>{

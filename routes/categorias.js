@@ -131,11 +131,11 @@ router.post('/api/edit', (req, res) => {
 /* Ruta elimina categorias */
 
 router.post('/api/delete', (req, res) => {
-    if ((req.body.id == "")|| (req.body.id == null)){
-        res.json({error:"En la peticion de borrar el campo ID debe existir y no llegar vacio"});
+    if ((req.body._id == "")|| (req.body._id == null)){
+        res.json({error:"En la peticion de borrar el campo _ID debe existir y no llegar vacio"});
     }
     else {
-        categoriesmodel.deleteOne({ _id: req.body.id }, (err, category)=> {
+        categoriesmodel.deleteOne({ _id: req.body._id }, (err, category)=> {
             if (err) return res.json({ error: err.message });
             res.json(category);
         })

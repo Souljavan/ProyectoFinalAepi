@@ -174,7 +174,7 @@ router.post('/api/delete', function (req, res) {
   if ((req.body._id == "") || (req.body._id == null)) {
     res.json({ error: "En la peticion de borrar el campo _ID debe existir y no llegar vacio" });
   } else {
-    Postsmodel.deleteOne({ _id: req.body.id }, (err, Posts) => {
+    Postsmodel.deleteOne({ _id: req.body._id }, (err, Posts) => {
       if (err) return res.json({ error: err.message });
       res.json(Posts);
     })
